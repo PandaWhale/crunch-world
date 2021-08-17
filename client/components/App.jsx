@@ -1,8 +1,10 @@
+//Importing React and Hooks
 import React, { useState, useEffect, createContext, useReducer } from "react";
 import ProductDisplay from "./display_comps/ProductDisplay.jsx";
 import Cart from "./Cart.jsx";
 import SignIn from "./SignIn.jsx";
 import NavBar from "./NavBar.jsx";
+//Import React Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignUp from "./SignUp.jsx";
 
