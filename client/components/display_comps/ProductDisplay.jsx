@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useReducer, useContext} from 'react';
-import ProductCard from '../ProductCard.jsx'
 import useFetch from '../../hooks/useFetch.jsx'
 import MaterialCards from '../MaterialCards.jsx'
 import Cart from '../Cart.jsx';
