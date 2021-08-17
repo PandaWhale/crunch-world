@@ -14,7 +14,7 @@ const Nav = () => {
         <Link to="/cart">
           <ShoppingCartIcon />
         </Link>
-        <br></br> <Link to="/signin"> Wes Login</Link>
+        <br></br> <Link to="/signin"> Savitri Login</Link>
       </div>
     </nav>
   );
