@@ -2,12 +2,12 @@ const express = require('express');
 const path = require('path');
 
 //middleware for login requests
-const loginController = require(path.resolve(__dirname, '../controllers/loginController'));
+const signinController = require(path.resolve(__dirname, '../controllers/signinController'));
 
-const loginRouter = express.Router();
+const signinRouter = express.Router();
 
-loginRouter.get('/', loginController.attemptLogin, (req, res) => {
-  return res.status(200).set('Content-Type', 'json/application').json(res.locals.loginAttempt);
+signinRouter.get('/', signinController.attemptSignin, (req, res) => {
+  return res.status(200).set('Content-Type', 'json/application').json(res.locals.signinAttempt);
 });
 
-module.exports = loginRouter;
+module.exports = signinRouter;

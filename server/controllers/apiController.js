@@ -10,6 +10,7 @@ const apiController = {
       if (err) return next(err);
       
       res.locals.products = queryRes.rows; //should return array of objects with details on ALL products
+      console.log('This is the response from the Products query: ', queryRes)
       return next();
     });
   },
