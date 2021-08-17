@@ -11,7 +11,7 @@ const ProductCard = () =>{
        <div className="product-info">
            <p className="product-price">price</p>
            <p className="product-orgin">orgin</p>
-           <section className="product-description">Wes Description of product</section>
+           <section className="product-description">Description of product</section>
        </div>
             </div>
            
