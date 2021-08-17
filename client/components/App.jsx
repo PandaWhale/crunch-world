@@ -22,15 +22,17 @@ const App = () => {
   const [state, dispatch] = useReducer(appReducer, []);
 
   return (
-    <Router>
+    <Router>{/* Enables react-dom-router to switch components*/}
       <AppContext.Provider value={[state, dispatch]}>
         <div className="app-container">
           <Nav />
           <Switch>
             <Route exact path="/">
-              <ProductDisplay />
+              {/* Product/Display [;ayComponents/Display: holds the MaterialCards components */}
+              <ProductDisplay /> 
             </Route>
             <Route exact path="/cart">
+              {/* Display: holds */}
               <Cart />
             </Route>
             <Route exact path="/signin">
@@ -42,7 +44,7 @@ const App = () => {
           </Switch>
         </div>
       </AppContext.Provider>
-    </Router>
+    </Router>//End Router Wrapping- Enables switching of displayed components
   );
 };
 
