@@ -3,15 +3,12 @@ import ItemCount from './components/ItemCount.jsx';
 import NavBar from './components/NavBar.jsx';
 import ProductsContainer from './components/ProductsContainer.jsx';
 
-
-
-
-
-
 const App = () => (
   <div id="app">
     <NavBar/>
-    <ProductsContainer/>
+    <ProductsContainer
+      id = {'ProductsContainer0'}
+    />
   </div>
 );
   

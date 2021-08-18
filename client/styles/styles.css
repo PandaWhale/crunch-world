@@ -24,12 +24,14 @@ body {
   /* height: 20px;
   height: 20px;
   background-color: blue; */
+  /* padding-top: 33px; */
 }
 
 .product-container {
   display: flex;
   justify-content: center;
   border: 1px solid rgb(131, 131, 170);
+  /* border-radius: 40px; */
   margin-top: 20px;
 }
 

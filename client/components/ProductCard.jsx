@@ -12,26 +12,16 @@ import {
   Typography,
 } from "@material-ui/core";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-    height: 450,
-  },
-  media: {
-    height: 280,
-  },
-});
-
-const classes = useStyles();
-
 const ProductCard = (props) => {
   // <div className="product-container">
   return (
-    <Card className={classes.root}>
+    <Card>
       <CardActionArea>
-        <CardMedia 
-          className = {classes.media}
-          image={props.image} 
+        <CardMedia
+          style={{ height: 0, paddingTop: "56%" }}
+          ////////////
+          image={props.image}
+          title="TEST GDI"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
