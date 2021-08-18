@@ -2,6 +2,7 @@ import * as types from '../constants/actionTypes.js';
 
 const initialState = {
   productsArray: [],
+  gotLatestProducts: false,
   cartArray: [],
   totalItems: 0,
 }
@@ -11,6 +12,7 @@ const mainReducer = (state = initialState, action) => {
     case types.RENDER_PRODUCTS:
       return {
         ...state,
+        gotLatestProducts: true,
         productsArray: action.payload // GET request to server
       }
     
