@@ -3,6 +3,8 @@ import React from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ItemCount from "./ItemCount.jsx";
 
+import { Link } from "react-router-dom";
+
 // Functional Component NAVBAR that holds shopping cart
 const NavBar = () => {
   return (
@@ -13,9 +15,10 @@ const NavBar = () => {
       <div className="interactables">
         <ItemCount />
         <ShoppingCartIcon />
-        <a>Sign in</a>
+        <Link to="/signin">Sign in</Link>
       </div>
     </nav>
+
   );
 };
 
