@@ -31,7 +31,8 @@ module.exports = {
     proxy: {
       '/': 'http://localhost:3000',
       '/api': 'http://localhost:3000',
-      '/login': 'http://localhost:3000',
+      '/signin': 'http://localhost:3000',
+      '/signup': 'http://localhost:3000',
       '/images': 'http://localhost:3000'
     },
     hot: true,
