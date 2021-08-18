@@ -11,4 +11,27 @@ export const addItemAction = () => {
   }
 }
 
+// export const loadProducts=()=>{
+//   return {
+//     type: types.RENDER_PRODUCTS,
+//     payload: fetch,
+//   }
+// }
+
+
 //loadProducts()
+//this function takes in an anonymous arrow  function
+export const renderProductsAction = () => (dispatch) => {
+    //make your fetch request,
+    //when it resolves, take the data and send a dispatch
+    fetch('/api/products')
+    .then(res => res.json())
+    .then(data => {
+      console.log("From Fetch Request: ")
+      dispatch({
+        type: types.RENDER_PRODUCTS,
+        payload: data,
+      });
+    })
+    .catch(console.error);
+} 
