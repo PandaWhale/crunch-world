@@ -12,12 +12,27 @@ import {
   Typography,
 } from "@material-ui/core";
 
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+    height: 450,
+  },
+  media: {
+    height: 280,
+  },
+});
+
+const classes = useStyles();
+
 const ProductCard = (props) => {
   // <div className="product-container">
   return (
-    <Card className="grid-item">
+    <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia image={props.image} />
+        <CardMedia 
+          className = {classes.media}
+          image={props.image} 
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
