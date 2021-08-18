@@ -27,7 +27,6 @@ export const renderProductsAction = () => (dispatch) => {
     fetch('/api/products')
     .then(res => res.json())
     .then(data => {
-      console.log("From Fetch Request: ")
       dispatch({
         type: types.RENDER_PRODUCTS,
         payload: data,
