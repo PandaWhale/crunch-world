@@ -6,7 +6,8 @@ const PORT = 3000;
 
 const mainRouter = require(path.resolve(__dirname, './routes/mainRouter'));
 const apiRouter = require(path.resolve(__dirname, './routes/apiRouter'));
-const loginRouter = require(path.resolve(__dirname, './routes/loginRouter'));
+const signinRouter = require(path.resolve(__dirname, './routes/signinRouter'));
+const signupRouter = require(path.resolve(__dirname, './routes/signupRouter'));
 
 app.use(express.urlencoded({ extended: true })); //parses URL route into req.params or req.query
 app.use(express.json()) //parses req.body from JSON to JS
@@ -25,7 +26,8 @@ if (process.env.NODE_ENV === 'production') {
 // ROUTERS
 app.use('/', mainRouter);
 app.use('/api', apiRouter);
-app.use('/login', loginRouter);
+app.use('/signin', signinRouter);
+app.use('/signup', signupRouter);
 
 //GLOBAL ERROR HANDLER
 app.use(function (err, req, res, next) {
