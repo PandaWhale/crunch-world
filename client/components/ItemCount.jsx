@@ -25,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const ItemCount = (props) => {
   console.log("HEYYYYYY!", props.productsArray);
+  
   return (
     <span>
       <h5>Items: {props.totalItems}</h5>
