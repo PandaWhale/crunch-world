@@ -10,13 +10,8 @@ const mapStateToProps = (state) => {
   return {
     totalItems: state.mainReducer.totalItems,
     productsArray: state.mainReducer.productsArray,
-<<<<<<< HEAD
-  };
-};
-=======
   }
 }
->>>>>>> dev
 
 //this maps 'methods' to props
 //dispatch is an action from Redux
