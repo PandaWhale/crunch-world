@@ -24,15 +24,15 @@ const mapDispatchToProps = (dispatch) => {
 
 const ItemCount = (props) => {
   return (
-    <div>
-      <h2>Item Count: {props.totalItems}</h2>
+    <span>
+      <h5>Items: {props.totalItems}</h5>
       <button onClick={props.addItem}>Add Item</button>
-    </div>
+    </span>
   );
 };
 
 // export default ItemCount;
-// export default connect(mapStateToProps, null)(ItemCount); 
+//  export default connect(mapStateToProps, null)(ItemCount); 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemCount); 
 
 // connect subscribed an individual component (in this case, ItemCount) to the store (single source of truth)

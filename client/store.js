@@ -1,13 +1,16 @@
 import { createStore, applyMiddleware } from 'redux';
+// import thunk from 'thunk';
 
 import reducers from './reducers/index.js';
 // import { loadMarkets } from './actions/actions';
 
 const store = createStore(
-  reducers
+  reducers,
+  // applyMiddleware(thunk)
 );
 
-// store.dispatch(loadProducts());
+//consider this as component didmount?
+store.dispatch(renderProductsAction());
 
 export default store;
 //should be in the index.js below App.jsx

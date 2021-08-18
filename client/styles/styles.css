@@ -12,6 +12,7 @@ body{
 }
 
 .display-container{
+  background-color: aqua;
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
