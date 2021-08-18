@@ -11,6 +11,13 @@ export const addItemAction = () => {
   }
 }
 
+// export const addItemAction = () => {
+//   return {
+//     type: types.ADD_ITEM,
+//     payload: 1,
+//   }
+// }
+
 // export const loadProducts=()=>{
 //   return {
 //     type: types.RENDER_PRODUCTS,

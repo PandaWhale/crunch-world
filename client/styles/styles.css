@@ -1,7 +1,6 @@
-body{
+body {
   background-color: rgb(255, 189, 114);
 }
-
 
 .header {
   display: flex;
@@ -11,7 +10,7 @@ body{
   border: 1px solid rgb(131, 131, 170);
 }
 
-.display-container{
+.display-container {
   background-color: aqua;
   display: grid;
   height: 100vh;
@@ -22,6 +21,9 @@ body{
 .grid-item {
   margin-left: auto;
   margin-right: auto;
+  /* height: 20px;
+  height: 20px;
+  background-color: blue; */
 }
 
 .product-container {
@@ -58,4 +60,3 @@ body{
   width: 374px;
   height: 76px;
 }
-

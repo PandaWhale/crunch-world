@@ -10,8 +10,9 @@ const mapStateToProps = (state) => {
   return {
     totalItems: state.mainReducer.totalItems,
     productsArray: state.mainReducer.productsArray,
-  }
-}
+    gotLatestProducts: state.mainReducer.gotLatestProducts,
+  };
+};
 
 //this maps 'methods' to props
 //dispatch is an action from Redux
@@ -24,7 +25,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const ItemCount = (props) => {
-  console.log("HERE: ", props.productsArray)
+  if (props.gotLatestProducts)
+    console.log("HERE: ", props.productsArray);
   return (
     <span>
       <h5>Items: {props.totalItems}</h5>
