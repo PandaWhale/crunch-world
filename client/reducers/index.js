@@ -3,7 +3,5 @@
 import { combineReducers } from 'redux';
 import mainReducers from './mainReducer.js';
 
-
-
-
 export default combineReducers({ mainReducer: mainReducers });
+//conceptually, you have to send this to the store
