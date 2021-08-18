@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const signinController = {};
 
 signinController.verifyUser = async (req, res, next) => {
-  const query = `SELECT password FROM customers WHERE email = $1`;
+  const query = `SELECT password, id FROM customers WHERE email = $1`;
   const values = [req.body.email];
   await db.query(query, values)
     .then((queryResponse) => {
@@ -18,7 +18,7 @@ signinController.verifyUser = async (req, res, next) => {
         res.locals.signinAttempt = {signin: 'failure', message: 'Invalid email or password.'}
         return next()
       } else {
-        res.locals.signinAttempt = {signin: 'success', message: 'You have successfully logged in!'}
+        res.locals.signinAttempt = {signin: 'success', cust_id: 'You have successfully logged in!'}
         return next()
       }
     })
