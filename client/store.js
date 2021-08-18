@@ -7,6 +7,6 @@ const store = createStore(
   reducers
 );
 
-store.dispatch(loadProducts());
+// store.dispatch(loadProducts());
 
 export default store;
