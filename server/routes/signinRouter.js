@@ -6,8 +6,9 @@ const signinController = require(path.resolve(__dirname, '../controllers/signinC
 
 const signinRouter = express.Router();
 
-signinRouter.get('/', signinController.attemptSignin, (req, res) => {
-  return res.status(200).set('Content-Type', 'json/application').json(res.locals.signinAttempt);
+signinRouter.post('/', signinController.verifyUser, (req, res) => {
+  return res.status(200).set('Content-Type', 'json/application').json(res.locals.signinAttempt)
 });
+
 
 module.exports = signinRouter;

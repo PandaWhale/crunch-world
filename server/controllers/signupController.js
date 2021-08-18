@@ -1,30 +1,22 @@
 const path = require('path')
 const db = require(path.resolve(__dirname, '../../database/pool.js'));
+const bcrypt = require('bcryptjs');
+const SALT = 10;
 
 const signupController = {
-  async attemptSignup(req, res, next) {
-  //   const query = `SELECT id FROM customers
-  //   WHERE email = $1 AND password = $2`;
-
-  //   const values = [req.query.email, req.query.password];
-
-  //   await db.query(query, values, (err, queryRes) => {
-  //     if (err) {
-  //       // we don't want a login failure to break our app--respond explaining that the query failed
-  //       res.locals.signinAttempt = {signin: 'failure', message: 'Query Failure!'};
-  //       return next();
-  //     }
-
-  //     if (queryRes.rows.length === 0) {
-  //       res.locals.signinAttempt = {signin: 'failure', message: 'Signin Credentials Invalid!'};
-  //       return next();
-  //     }
-
-  //     // console.log(queryRes.rows[0]);
-
-  //     res.locals.signinAttempt =  {signin: 'success', cust_id : queryRes.rows[0].id};
-  //     return next();
-  //   });
+  async createUser(req, res, next) {
+    const hash = await bcrypt.hash(req.body.password, SALT)
+    const query = `INSERT INTO customers (firstname, lastname, email, password, salt)
+    VALUES ($1, $2, $3, $4, $5)`;
+    const values = [req.body.firstName, req.body.lastName, req.body.email, hash, SALT];
+    await db.query(query, values, (err, queryRes) => {
+      if (err) {
+        res.locals.signinAttempt = {signup: 'failure', message: 'Query Failure!'};
+        return next();
+      }
+      res.locals.signinAttempt =  {signin: 'success', message: 'Successfully signed up!'};
+      return next();
+    });
   }
 };
 

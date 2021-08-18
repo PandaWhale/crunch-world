@@ -19,7 +19,7 @@ const Cart = () =>{
               console.log(data);
             })
             
-            .catch(err => console.log('Login error:', err));
+            .catch(err => console.log('Sign error:', err));
         };
         const priceSum =(...args)=>{
               return  args.reduce((acc,cv) =>{

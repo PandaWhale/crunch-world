@@ -65,14 +65,14 @@ const useStyles = makeStyles((theme) => ({
 //     };
 
 function poster(data) {
-    fetch(`/login?email=${data.email}&password=${data.password}`)
+    fetch(`/signin?email=${data.email}&password=${data.password}`)
     .then(data => data.json())
     .then(res => console.log(res))
-    .catch(err => console.log('Login error:', err));
+    .catch(err => console.log('Signin error:', err));
 }
 
 
-export default function Login() {
+export default function Signin() {
     const [values, handleChange] = useForm({email: '', password: ''});
     // useEffect(()=>{
     //     console.log(values)
