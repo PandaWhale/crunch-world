@@ -9,6 +9,7 @@ import { addItemAction } from '../actions/actions.js';
 const mapStateToProps = (state) => {
   return {
     totalItems: state.mainReducer.totalItems,
+    productsArray: state.mainReducer.productsArray,
   }
 }
 
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const ItemCount = (props) => {
+  console.log("HERE: ", props.productsArray)
   return (
     <span>
       <h5>Items: {props.totalItems}</h5>
