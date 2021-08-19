@@ -4,9 +4,9 @@ const path = require('path');
 // require in a mock database
 // const db = require('../')
 
-describe('', () => {
+describe('database unit tests', () => {
   beforeAll((done) => {
-    // declare 
+    // declare a mock database
     done()
   })
   describe('database unit tests', () => {

@@ -1,8 +1,4 @@
-// might need to set up a server and set it to localhost 3000
 const request = require('supertest');
-const fs = require('fs');
-const path = require('path');
-
 const server = 'http://localhost:3000'
 
 describe('Route integration', () => {
