@@ -11,7 +11,7 @@ describe('', () => {
   })
   describe('database unit tests', () => {
     it('returns an error when the email or password is invalid', () => {
-
+      
     });
 
     it('returns an error if the customer already exists', () => {

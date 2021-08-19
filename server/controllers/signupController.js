@@ -22,7 +22,7 @@ const signupController = {
         return next();
       } 
       else if (queryResponse.rows[0]){
-        res.locals.signinAttempt = {signup: 'failure', message: 'Customer already exists!'}
+        res.locals.signinAttempt = { error: 'customer already exists', signup: 'failure', message: 'Customer already exists!'}
         return next();
       } 
       else {
