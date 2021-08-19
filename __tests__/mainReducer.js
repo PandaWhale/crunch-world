@@ -1,7 +1,8 @@
 // import { expect } from '@jest/globals';
 // import { beforeEach, it } from 'jest-circus';
 // import { describe } from 'yargs';
-import subject from '../client/reducers/mainReducer';
+// import subject from '../client/reducers/mainReducer';
+const subject
 
 describe ('crunchWORLD main reducer', () => {
   let state;

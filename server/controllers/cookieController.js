@@ -1,8 +1,8 @@
 const cookieController = {};
 
 cookieController.setSSIDCookie = (req, res, next) => {
-  if (res.locals.cust_id) {
-    res.cookie("ssid", res.locals.cust_id, {
+  if (res.locals.signinAttempt.cust_id) {
+    res.cookie("ssid", res.locals.signinAttempt.cust_id, {
       httpOnly: true,
       expires: new Date(Date.now() + 900000),
     })
