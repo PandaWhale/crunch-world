@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 //import * as actions from '../actions/actions.js'
 import { addItemAction } from "../actions/actions.js";
 
-
 //this maps properties to props
 const mapStateToProps = (state) => {
   return {
@@ -29,7 +28,7 @@ const ItemCount = (props) => {
   return (
     <span>
       <h5>Items: {props.totalItems}</h5>
-      <button onClick={props.addItem}>Add Item</button>
+      {/* <button onClick={props.addItem}>Add Item</button> */}
     </span>
   );
 };
@@ -47,7 +46,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(ItemCount);
 //make fetch call here
 //in the promise chain thats where you make the dispatch to reducer
 //}
-
 
 // import * as types from "../constants/actionTypes.js";
 
