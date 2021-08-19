@@ -29,12 +29,19 @@ export const updatePasswordEntryAction = (entry) => {
 // export const attemptSignInAction = (dispatch) => {
 //   fetch("/signin", {
 //     method: "POST",
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({email:'jorge@codesmith.io', password: 'password'}),
 //   })
-// }
-
-// (10:35PM, 08/18/21)
-// export const removeFromCartAction = (dispatch) => {
-
+//     .then((res) => res.json())
+//     .then((signInRes) => {
+//       dispatch({
+//         type: types.ATTEMPT_SIGN_IN,
+//         payload: signInRes,
+//       });
+//     })
 // }
 
 //loadProducts()
@@ -53,11 +60,9 @@ export const renderProductsAction = () => (dispatch) => {
     .catch(console.error);
 };
 
-// will be implemented... (9:37PM, 08/18/21)
-// export const attemptSignInAction = () => {
-//   fetch("/signin", {
-//     method: "POST",
-//   })
+// (10:35PM, 08/18/21)
+// export const removeFromCartAction = (dispatch) => {
+
 // }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -18,13 +18,18 @@ import { connect } from "react-redux"; //importing connect to attempt and create
 import {
   updateUsernameEntryAction,
   updatePasswordEntryAction,
+  attemptSignInAction,
 } from "../actions/actions";
+
+import * as types from "../constants/actionTypes.js";
 
 // How does mapStateToProps work again?! (9:51PM, 08/18/21)
 const mapStateToProps = (state) => {
   return {
     isSignedIn: state.mainReducer.isSignedIn,
     custId: state.mainReducer.custId,
+    usernameEntry: state.mainReducer.usernameEntry,
+    passwordEntry: state.mainReducer.passwordEntry,
   };
 };
 
@@ -38,9 +43,22 @@ const mapDispatchToProps = (dispatch) => ({
     console.log(entry);
     dispatch(updatePasswordEntryAction(entry));
   },
-  attemptSignIn: () => {
-    console.log("Making POST request for Sign In!");
-    dispatch(attemptSignInAction());
+  attemptSignIn: (email, password) => {
+    fetch("/signin", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email, password: password }),
+    })
+      .then((res) => res.json())
+      .then((signInRes) => {
+        dispatch({
+          type: types.ATTEMPT_SIGN_IN,
+          payload: signInRes,
+        });
+      });
   },
 });
 
@@ -92,7 +110,10 @@ const SignIn = (props) => {
                     fullWidth
                     variant="contained"
                     onClick={() => {
-                      console.log("clicked signin button!");
+                      props.attemptSignIn(
+                        props.usernameEntry,
+                        props.passwordEntry
+                      );
                     }}
                   >
                     Sign In

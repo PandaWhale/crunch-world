@@ -5,8 +5,9 @@ const initialState = {
   gotLatestProducts: false,
   usernameEntry: "", //username and password should update with each keystroke within the entry! (9:32PM, 08/18/21)
   passwordEntry: "",
-  isSignedIn: true,
+  isSignedIn: false,
   custId: null, //should be populated on sign-in! (9:18PM, 08/18/21)
+  custName: null,
   cartArray: [],
   totalItems: 0,
 };
@@ -41,7 +42,9 @@ const mainReducer = (state = initialState, action) => {
     case types.ATTEMPT_SIGN_IN:
       return {
         ...state,
-        custId: action.payload, //POST request to server | (9:28PM, 08/18/21)
+        custId: action.payload.cust_id, //POST request to server | (9:28PM, 08/18/21)
+        custName: action.payload.cust_name,
+        isSignedIn: true,
       };
 
     case types.REMOVE_FROM_CART:
