@@ -5,11 +5,17 @@ const bcrypt = require('bcryptjs');
 const signinController = {};
 
 signinController.verifyUser = async (req, res, next) => {
-  const query = `SELECT password, id FROM customers WHERE email = $1`;
+  const query = `SELECT password, id, firstname FROM customers WHERE email = $1`;
   const values = [req.body.email];
+  let id;
+  let name;
   await db.query(query, values)
     .then((queryResponse) => {
-      console.log('This is the hashed pass from query: ', queryResponse.rows[0].password)
+      console.log('This is the response from query: ', queryResponse.rows)
+      if(queryResponse.rows[0]){
+        id = queryResponse.rows[0]['id'];
+        name = queryResponse.rows[0]['firstname'];
+      }
       const match = bcrypt.compare(req.body.password, queryResponse.rows[0]['password'])
       return match;
     })
@@ -18,7 +24,7 @@ signinController.verifyUser = async (req, res, next) => {
         res.locals.signinAttempt = {signin: 'failure', message: 'Invalid email or password.'}
         return next()
       } else {
-        res.locals.signinAttempt = {signin: 'success', cust_id: 'You have successfully logged in!'}
+        res.locals.signinAttempt = {signin: 'success', cust_id: id, cust_name: name}
         return next()
       }
     })
