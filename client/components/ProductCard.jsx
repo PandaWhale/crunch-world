@@ -11,6 +11,17 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
+import { connect } from "react-redux";
+import { addToCartAction } from "../actions/actions";
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (item) => {
+      dispatch(addToCartAction(item));
+    }
+  }
+}
 
 const ProductCard = (props) => {
   // <div className="product-container">
@@ -34,7 +45,14 @@ const ProductCard = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button 
+          size="small" 
+          color="primary" 
+          onClick={()=>{
+            console.log(props.name, "|||", props.price, "|||", props.origin);
+            props.addToCart({name: props.name, price: props.price, origin: props.origin})
+          }}
+        >
           ADD TO CART
         </Button>
       </CardActions>
@@ -42,4 +60,5 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+// export default ProductCard;
+export default connect(null, mapDispatchToProps)(ProductCard);
