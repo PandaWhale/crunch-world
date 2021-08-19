@@ -43,4 +43,4 @@ const ProductsContainer = (props) => {
   return <div className="display-container">{arrayToRender}</div>;
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);
+export default connect(mapStateToProps, null)(ProductsContainer);

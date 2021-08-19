@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
 };
 
 const App = (props) => {
+  //DEFAULT, USER NOT LOGGED IN
   if (!props.isSignedIn) {
     return (
       <Router>
