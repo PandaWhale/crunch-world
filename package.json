@@ -1,12 +1,16 @@
 {
   "name": "crunch-world",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production nodemon server/server.js",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\""
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\"",
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -19,6 +23,7 @@
     "url": "https://github.com/tylerprestonholt/crunch-world/issues"
   },
   "homepage": "https://github.com/tylerprestonholt/crunch-world#readme",
+
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
@@ -36,8 +41,10 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "babel-jest": "^27.0.6",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "jest": "^27.0.6",
     "pg": "^8.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
