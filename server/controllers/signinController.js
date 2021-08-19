@@ -21,7 +21,7 @@ signinController.verifyUser = async (req, res, next) => {
     })
     .then((result) => {
       if (!result) {
-        res.locals.signinAttempt = {signin: 'failure', message: 'Invalid email or password.'}
+        res.locals.signinAttempt = { error: 'Invalid credentials',signin: 'failure', message: 'Invalid email or password.'}
         return next()
       } else {
         res.locals.signinAttempt = {signin: 'success', cust_id: id, cust_name: name}
