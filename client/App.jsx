@@ -11,36 +11,31 @@ const App = () => {
   return (
     <Router>
       <div>
-      <nav className="nav-container">
-        <Link to="/">
-          <div className="logo">
-            <img src="../../images/logocook.png" id="cooklogo" />
-          </div>
-        </Link>
+        <nav className="nav-container">
+          <Link to="/">
+            <div className="logo">
+              <img src="../../images/logocook.png" id="cooklogo" />
+            </div>
+          </Link>
 
-        <div className="interactables">
-          {/* <SignIn> */}
-          <Link to="/signin">Sign In</Link>
-        </div>
-      </nav>
-      <Switch>
-        <Route path="/signin">
-          <SignIn/>
-        </Route>
-        <Route path="/">
-          <ProductsContainer/>
-        </Route>
-      </Switch>
+          <div className="interactables">
+            <Link to="/signin">Sign In</Link>
+          </div>
+        </nav>
+        <Switch>
+          <Route path="/signin">
+            <SignIn />
+          </Route>
+          <Route path="/">
+            <ProductsContainer />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
 };
 
-
-
 export default App;
-
-
 
 // Step1. Surround component in <Router></Router>
 //What component should someone see when they visit the page at the root route = '/'
@@ -72,8 +67,6 @@ export default App;
   </div> <- APP DIV
 </Router>
 */
-
-
 
 // if (userloggedIn) {
 //   return (

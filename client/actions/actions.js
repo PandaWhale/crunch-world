@@ -10,14 +10,32 @@ export const addItemAction = () => {
   };
 };
 
-// export const addItemAction = () => {
-//   return {
-//     type: types.ADD_ITEM,
-//     payload: 1,
-//   }
+export const updateUsernameEntryAction = (entry) => {
+  return {
+    type: types.UPDATE_USERNAME_ENTRY,
+    payload: entry,
+  };
+};
+
+// (10:19PM, 08/18/21)
+export const updatePasswordEntryAction = (entry) => {
+  return {
+    type: types.UPDATE_PASSWORD_ENTRY,
+    payload: entry,
+  };
+};
+
+// (10:22PM, 08/18/21)
+// export const attemptSignInAction = (dispatch) => {
+//   fetch("/signin", {
+//     method: "POST",
+//   })
 // }
 
+// (10:35PM, 08/18/21)
+// export const removeFromCartAction = (dispatch) => {
 
+// }
 
 //loadProducts()
 //this function takes in an anonymous arrow  function
@@ -34,3 +52,19 @@ export const renderProductsAction = () => (dispatch) => {
     })
     .catch(console.error);
 };
+
+// will be implemented... (9:37PM, 08/18/21)
+// export const attemptSignInAction = () => {
+//   fetch("/signin", {
+//     method: "POST",
+//   })
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// export const addItemAction = () => {
+//   return {
+//     type: types.ADD_ITEM,
+//     payload: 1,
+//   }
+// }
