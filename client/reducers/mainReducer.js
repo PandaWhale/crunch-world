@@ -23,8 +23,9 @@ const mainReducer = (state = initialState, action) => {
 
     case types.ADD_TO_CART:
       return {
-        // ...state,
-        // cartArray: action.payload
+        ...state,
+        cartArray: state.cartArray.push(action.payload),
+        totalItems: state.totalItems + 1,
       };
 
     case types.UPDATE_USERNAME_ENTRY:

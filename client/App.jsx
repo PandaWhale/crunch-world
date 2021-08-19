@@ -4,12 +4,12 @@ import ItemCount from "./components/ItemCount.jsx";
 import ProductsContainer from "./components/ProductsContainer.jsx";
 //REACT ROUTER imports:
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import SignIn from "./components/SignIn.jsx";
 import Cart from "./components/Cart.jsx";
 //Start NAVBAR EXPERIMENT
 import NavBar from "./components/NavBar.jsx";
 //Importing secondary NavBar
 import NavBarUser from "./components/NavBarUser.jsx";
+import SignIn from "./components/SignIn.jsx";
 
 //Interested in if user is logged in?
 import { connect } from "react-redux";
@@ -24,7 +24,8 @@ const App = (props) => {
     return (
       <Router>
         <NavBar />
-        <ProductsContainer />
+        <Route exact path="/" component={ProductsContainer}></Route>
+        <Route path="/signin" component={SignIn}></Route>
       </Router>
     );
   } else {
@@ -32,7 +33,8 @@ const App = (props) => {
       //navbar2 component
       <Router>
         <NavBarUser />
-        <ProductsContainer />
+        <Route exact path="/" component={ProductsContainer}></Route>
+        <Route path="/cart" component={Cart}></Route>
       </Router>
     );
   }

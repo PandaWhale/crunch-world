@@ -11,10 +11,11 @@ const NavBar = () => {
   return (
     <div>
       <nav className="nav-container">
-        <div className="logo">
-          <img src="../../images/logocook.png" id="cooklogo" />
-        </div>
-
+        <Link to="/">
+          <div className="logo">
+            <img src="../../images/logocook.png" id="cooklogo" />
+          </div>
+        </Link>
         <div className="interactables">
           {/*This WILL be a <Link> once we implement 
         the router in the parent component*/}

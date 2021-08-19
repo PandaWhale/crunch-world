@@ -10,6 +10,14 @@ export const addItemAction = () => {
   };
 };
 
+//when user clicks button to add item to cart
+export const addItemToCartAction = (item) => {
+  return {
+    type: types.ADD_TO_CART,
+    payload: item,
+  };
+};
+
 export const updateUsernameEntryAction = (entry) => {
   return {
     type: types.UPDATE_USERNAME_ENTRY,

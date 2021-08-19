@@ -134,7 +134,7 @@ const SignIn = (props) => {
       </StylesProvider>
     ); //End Default Render
   } else {
-    return <h1>Welcome User: </h1>;
+    return <h1>Welcome User </h1>;
   }
 
   //Welcome User: Pull username from state;
