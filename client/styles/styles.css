@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 body {
   background-color: rgb(255, 189, 114);
+  font-family: 'Poppins', sans-serif;
 }
 
 .header {
@@ -11,7 +14,7 @@ body {
 }
 
 .display-container {
-  background-color: aqua;
+  /* background-color: aqua; */
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;

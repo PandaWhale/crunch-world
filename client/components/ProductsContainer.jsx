@@ -13,15 +13,12 @@ import { connect } from "react-redux";
 //mapstate to props here, then
 const mapStateToProps = (state) => {
   return {
-    // totalItems: state.mainReducer.totalItems,
     productsArray: state.mainReducer.productsArray,
     gotLatestProducts: state.mainReducer.gotLatestProducts,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return;
-};
+
 
 const ProductsContainer = (props) => {
   let arrayToRender = []; //array of ProductCards (components)
@@ -35,6 +32,7 @@ const ProductsContainer = (props) => {
           origin={product.origin}
           id={`ProductCard${i}`}
           image={"../../images/" + product.img_url}
+          
           //image = {'../../images' + product.img_url}  {`../../images/${product.img_url}`}
         />
       );

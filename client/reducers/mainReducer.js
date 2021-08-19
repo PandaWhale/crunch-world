@@ -12,7 +12,9 @@ const initialState = {
   totalItems: 0,
 };
 
+console.log("From mainReducer.js, should be initialState: ", initialState);
 const mainReducer = (state = initialState, action) => {
+  console.log("From mainReducer.js: ", state);
   switch (action.type) {
     case types.RENDER_PRODUCTS:
       return {
@@ -22,9 +24,12 @@ const mainReducer = (state = initialState, action) => {
       };
 
     case types.ADD_TO_CART:
+      const cartArray= state.cartArray;
+      cartArray.push(action.payload);
+
       return {
         ...state,
-        cartArray: state.cartArray.push(action.payload),
+        cartArray,//state.cartArray.push(action.payload),
         totalItems: state.totalItems + 1,
       };
 

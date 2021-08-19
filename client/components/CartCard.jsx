@@ -14,23 +14,20 @@ const CartCard = (props) => {
     <Card>
       <CardContent>
         <Typography variant="h5" component="h2">
-          Product Name
-          {/* props.name */}
+          Product Name: {props.name}
         </Typography>
         <Typography variant="body2" component="p">
-          Price
-          {/* props.price */}
+          Price: {props.price}
           <br />
-          Country of Origin
-          {/* props.origin */}
+          Country of Origin: {props.origin}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
+        {/* <Button
           onClick={null} //remove cart functionality goes here! | (10:35PM, 08/18/21)
         >
           REMOVE FROM CART
-        </Button>
+        </Button> */}
       </CardActions>
     </Card>
   );

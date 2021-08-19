@@ -11,7 +11,7 @@ export const addItemAction = () => {
 };
 
 //when user clicks button to add item to cart
-export const addItemToCartAction = (item) => {
+export const addToCartAction = (item) => {
   return {
     type: types.ADD_TO_CART,
     payload: item,
