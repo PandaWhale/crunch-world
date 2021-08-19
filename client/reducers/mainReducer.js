@@ -5,7 +5,7 @@ const initialState = {
   gotLatestProducts: false,
   usernameEntry: "", //username and password should update with each keystroke within the entry! (9:32PM, 08/18/21)
   passwordEntry: "",
-  isSignedIn: false,
+  isSignedIn: true,
   custId: null, //should be populated on sign-in! (9:18PM, 08/18/21)
   cartArray: [],
   totalItems: 0,
