@@ -1,15 +1,66 @@
-import * as types from '../constants/actionTypes.js';
+import * as types from "../constants/actionTypes.js";
 
-//Below are our Action Creators that get exported to where? 
+//Below are our Action Creators that get exported to where?
 //the get sent to our components via mapDispatchToProps - this links component action to reducer
-
 
 export const addItemAction = () => {
   return {
     type: types.ADD_ITEM,
     payload: 1,
-  }
-}
+  };
+};
+
+export const updateUsernameEntryAction = (entry) => {
+  return {
+    type: types.UPDATE_USERNAME_ENTRY,
+    payload: entry,
+  };
+};
+
+// (10:19PM, 08/18/21)
+export const updatePasswordEntryAction = (entry) => {
+  return {
+    type: types.UPDATE_PASSWORD_ENTRY,
+    payload: entry,
+  };
+};
+
+// (10:22PM, 08/18/21)
+// export const attemptSignInAction = (dispatch) => {
+//   fetch("/signin", {
+//     method: "POST",
+//   })
+// }
+
+// (10:35PM, 08/18/21)
+// export const removeFromCartAction = (dispatch) => {
+
+// }
+
+//loadProducts()
+//this function takes in an anonymous arrow  function
+export const renderProductsAction = () => (dispatch) => {
+  //make your fetch request,
+  //when it resolves, take the data and send a dispatch
+  fetch("/api/products")
+    .then((res) => res.json())
+    .then((data) => {
+      dispatch({
+        type: types.RENDER_PRODUCTS,
+        payload: data,
+      });
+    })
+    .catch(console.error);
+};
+
+// will be implemented... (9:37PM, 08/18/21)
+// export const attemptSignInAction = () => {
+//   fetch("/signin", {
+//     method: "POST",
+//   })
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 // export const addItemAction = () => {
 //   return {
@@ -17,27 +68,3 @@ export const addItemAction = () => {
 //     payload: 1,
 //   }
 // }
-
-// export const loadProducts=()=>{
-//   return {
-//     type: types.RENDER_PRODUCTS,
-//     payload: fetch,
-//   }
-// }
-
-
-//loadProducts()
-//this function takes in an anonymous arrow  function
-export const renderProductsAction = () => (dispatch) => {
-    //make your fetch request,
-    //when it resolves, take the data and send a dispatch
-    fetch('/api/products')
-    .then(res => res.json())
-    .then(data => {
-      dispatch({
-        type: types.RENDER_PRODUCTS,
-        payload: data,
-      });
-    })
-    .catch(console.error);
-} 
