@@ -19,6 +19,10 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return;
+};
+
 const ProductsContainer = (props) => {
   let arrayToRender = []; //array of ProductCards (components)
   if (props.gotLatestProducts) {
@@ -30,7 +34,7 @@ const ProductsContainer = (props) => {
           price={product.price}
           origin={product.origin}
           id={`ProductCard${i}`}
-          image = {'../../images/' + product.img_url}
+          image={"../../images/" + product.img_url}
           //image = {'../../images' + product.img_url}  {`../../images/${product.img_url}`}
         />
       );
