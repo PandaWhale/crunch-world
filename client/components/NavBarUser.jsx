@@ -1,13 +1,16 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import ItemCount from "./ItemCount.jsx";
-
+import { connect } from "react-redux";
 import { Link, Router, Switch } from "react-router-dom";
-import ProductsContainer from "./ProductsContainer.jsx";
 
-// Functional Component NAVBAR that asks User to SignIn
-const NavBar = () => {
+const mapStateToProps = (state) => {
+  return {
+    custName: state.mainReducer.custName,
+  };
+};
+
+//Function Component, only Displayed if User is Logged In
+const NavBarUser = (props) => {
   return (
     <div>
       <nav className="nav-container">
@@ -16,14 +19,19 @@ const NavBar = () => {
             <img src="../../images/logocook.png" id="cooklogo" />
           </div>
         </Link>
+
         <div className="interactables">
           {/*This WILL be a <Link> once we implement 
-        the router in the parent component*/}
-          <Link to="/signin">Sign In</Link>
+          the router in the parent component*/}
+          <Link to="/cart">
+            <ShoppingCartIcon />
+          </Link>
+          <span>Welcome: {props.custName}</span>
         </div>
       </nav>
     </div>
   );
 };
 
-export default NavBar;
+// export default NavBarUser;
+export default connect(mapStateToProps, null)(NavBarUser);
