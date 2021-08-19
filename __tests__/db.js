@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // require in a mock database
-const db = require('../')
+// const db = require('../')
 
 describe('', () => {
   beforeAll((done) => {
