@@ -22,6 +22,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#development-team">Development Team</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -43,7 +44,7 @@ Have you ever had a hankering for sweets beyond the normal assortment you find a
 * [Express](https://expressjs.com/)
 * [PostgreSQL](https://www.elephantsql.com/)
 * [Jest](https://jestjs.io/)
-* [node.bcrypt.js](https://github.com/kelektiv/node.bcrypt.js)
+* [Bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 * [Supertest](https://www.npmjs.com/package/supertest)
 
 
@@ -77,6 +78,14 @@ To run in developer mode, repeat same steps however run 'npm dev' to enable hot 
    ```sh
    npm install
    ```
+
+<!-- Dev Team -->
+## Development Team
+* [Sheldon Johnson](https://github.com/avatarwnd)
+* [Tyler Holt](https://github.com/tylerprestonholt)
+* [Jorge Espinoza](https://github.com/jespin457)
+* [Savitri Beaver](https://github.com/savybeav)
+* [Wesley Mungal](https://github.com/lagnum22)
 
 <!-- CONTRIBUTING -->
 ## Contributing
